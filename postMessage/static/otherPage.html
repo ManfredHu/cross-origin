@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>postMessage测试页面</title>
+</head>
+<body>
+    <h1 id="title">这是otherPage的标题一</h1>
+    <div id="msg"></div>
+    <script>
+        window.onmessage = function (e) {
+            const msg = document.getElementById('msg');
+            msg.innerHTML = `收到主页面postMessage数据:${e.data}`
+            // 给页面 A 发送回执
+            e.source.postMessage('这是从otherPage发送的信息' + new Date().toLocaleDateString(), e.origin);
+        }
+    </script>
+</body>
+</html>

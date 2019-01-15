@@ -1,0 +1,42 @@
+{
+  "name": "crossorigin",
+  "version": "1.0.0",
+  "description": "Cross origin demos includes JSONP CORS Window.domain Window.name PostMessage and proxy",
+  "private": true,
+  "scripts": {
+    "jsonp:node": "nodemon jsonp/server",
+    "jsonp:web": "webpack-dev-server --open --inline --progress --config jsonp/webpack.config.js",
+    "cors:node": "nodemon cors/server",
+    "cors:web": "webpack-dev-server --open --inline --progress --config cors/webpack.config.js",
+    "domain": "webpack-dev-server --open --inline --progress --config domain/webpack.config.js",
+    "windowName": "webpack-dev-server --open --inline --progress --config windowName/webpack.config.js",
+    "postMessage:web1": "http-server -p 9001 -o",
+    "postMessage:web2": "webpack-dev-server --open --inline --progress --config postMessage/webpack.config.js",
+    "proxy:web": "webpack-dev-server --open --inline --progress --config proxy/webpack.config.js",
+    "proxy:node1": "nodemon proxy/serverProxy.js",
+    "proxy:node2": "nodemon proxy/server.js"
+  },
+  "author": "ManfredHu",
+  "license": "MIT",
+  "devDependencies": {
+    "clean-webpack-plugin": "^1.0.0",
+    "copy-webpack-plugin": "^4.6.0",
+    "express": "^4.16.4",
+    "html-webpack-plugin": "^3.2.0",
+    "http-proxy-middleware": "^0.19.1",
+    "nodemon": "^1.18.9",
+    "webpack": "^4.28.3",
+    "webpack-cli": "^3.2.1",
+    "webpack-dev-server": "^3.1.14"
+  },
+  "dependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "axios": "^0.18.0",
+    "babel-loader": "^8.0.5",
+    "babel-plugin-transform-commonjs-es2015-modules": "^4.0.1",
+    "babel-preset-env": "^1.7.0",
+    "cors": "^2.8.5",
+    "http-server": "^0.11.1"
+  }
+}
